@@ -1,0 +1,235 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About — ${SITE_TITLE}`} description="Learn about Das Law — our mission, values, and the attorneys dedicated to serving you." />
+	</head>
+	<body>
+		<Header />
+
+		<section class="hero">
+			<div class="hero-content">
+				<h1>About Das Law</h1>
+				<p>Dedicated legal professionals committed to justice, integrity, and your success.</p>
+			</div>
+		</section>
+
+		<main>
+			<!-- Firm Overview -->
+			<section class="section">
+				<h2>Our Firm</h2>
+				<p>Das Law was founded on the principle that everyone deserves access to exceptional legal representation. We combine deep legal knowledge with a genuine commitment to our clients' well-being, providing personalized counsel across a wide range of practice areas.</p>
+				<p>Our attorneys take the time to understand each client's unique situation, crafting legal strategies tailored to achieve the best possible outcomes. Whether you're navigating a family dispute, planning your estate, growing your business, or defending your rights, Das Law is here to guide you every step of the way.</p>
+			</section>
+
+			<!-- Mission -->
+			<section class="section mission-section">
+				<h2>Our Mission</h2>
+				<p class="mission-text">To provide compassionate, results-driven legal services that empower individuals and families to protect what matters most — their rights, their livelihoods, and their futures.</p>
+			</section>
+
+			<!-- Attorney Bios (Placeholder) -->
+			<section class="section">
+				<h2>Our Team</h2>
+				<p class="team-intro">Our attorneys bring diverse experience and a shared commitment to excellence.</p>
+				<div class="team-grid">
+					<div class="attorney-card">
+						<div class="attorney-avatar">👤</div>
+						<h3>Attorney Name</h3>
+						<p class="attorney-role">Founding Partner</p>
+						<p>Bio coming soon.</p>
+					</div>
+					<div class="attorney-card">
+						<div class="attorney-avatar">👤</div>
+						<h3>Attorney Name</h3>
+						<p class="attorney-role">Associate Attorney</p>
+						<p>Bio coming soon.</p>
+					</div>
+					<div class="attorney-card">
+						<div class="attorney-avatar">👤</div>
+						<h3>Attorney Name</h3>
+						<p class="attorney-role">Associate Attorney</p>
+						<p>Bio coming soon.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Values -->
+			<section class="section values-section">
+				<h2>Our Values</h2>
+				<div class="values-grid">
+					<div class="value-item">
+						<h3>Integrity</h3>
+						<p>We uphold the highest ethical standards in every case and every interaction.</p>
+					</div>
+					<div class="value-item">
+						<h3>Advocacy</h3>
+						<p>We fight tenaciously for our clients' rights and interests.</p>
+					</div>
+					<div class="value-item">
+						<h3>Compassion</h3>
+						<p>We treat every client with empathy, respect, and understanding.</p>
+					</div>
+					<div class="value-item">
+						<h3>Excellence</h3>
+						<p>We pursue the highest quality of legal work in everything we do.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	/* ── Hero ── */
+	.hero {
+		background: linear-gradient(135deg, #0f1724 0%, #1a2744 50%, #243b6e 100%);
+		padding: 4rem 1.5rem;
+		text-align: center;
+	}
+	.hero-content {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.hero h1 {
+		color: #ffffff;
+		font-size: 2.6rem;
+		margin-bottom: 0.75rem;
+	}
+	.hero p {
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 1.15rem;
+		margin: 0;
+	}
+
+	/* ── Sections ── */
+	.section {
+		margin-bottom: 3rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.section:last-child {
+		border-bottom: none;
+	}
+	.section h2 {
+		font-size: 1.8rem;
+		color: #1a2744;
+		margin-bottom: 1rem;
+	}
+	.section p {
+		color: rgb(var(--gray-dark));
+		line-height: 1.7;
+	}
+
+	/* ── Mission ── */
+	.mission-section {
+		background: #f8f9fa;
+		padding: 2.5rem;
+		border-radius: 8px;
+		margin-left: -1em;
+		margin-right: -1em;
+		text-align: center;
+	}
+	.mission-text {
+		font-size: 1.2rem;
+		font-style: italic;
+		color: #1a2744;
+		max-width: 640px;
+		margin: 0 auto;
+		line-height: 1.6;
+	}
+
+	/* ── Team ── */
+	.team-intro {
+		text-align: center;
+		color: rgb(var(--gray));
+		margin-bottom: 2rem;
+	}
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+	.attorney-card {
+		text-align: center;
+		background: #ffffff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+		padding: 2rem 1.5rem;
+	}
+	.attorney-avatar {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	.attorney-card h3 {
+		font-size: 1.2rem;
+		color: #1a2744;
+		margin-bottom: 0.25rem;
+	}
+	.attorney-role {
+		color: #c9a84c;
+		font-weight: 700;
+		font-size: 0.9rem;
+		margin-bottom: 0.5rem;
+	}
+	.attorney-card p:last-child {
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+		margin: 0;
+	}
+
+	/* ── Values ── */
+	.values-section {
+		border-bottom: none;
+	}
+	.values-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+	.value-item {
+		padding: 1.5rem;
+		background: #ffffff;
+		border-left: 4px solid #c9a84c;
+		border-radius: 0 8px 8px 0;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+	}
+	.value-item h3 {
+		font-size: 1.1rem;
+		color: #1a2744;
+		margin-bottom: 0.5rem;
+	}
+	.value-item p {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 720px) {
+		.hero h1 {
+			font-size: 2rem;
+		}
+		.team-grid {
+			grid-template-columns: 1fr;
+		}
+		.values-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	@media (max-width: 480px) {
+		.hero {
+			padding: 3rem 1rem;
+		}
+		.hero h1 {
+			font-size: 1.7rem;
+		}
+	}
+</style>

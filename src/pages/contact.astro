@@ -8,38 +8,70 @@ import { SITE_TITLE } from '../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Contact — ${SITE_TITLE}`} description="Get in touch with me." />
+		<BaseHead title={`Contact Us — ${SITE_TITLE}`} description="Schedule a consultation with Das Law. We're here to help with your legal needs." />
 	</head>
 	<body>
 		<Header />
 		<main>
 			<section class="page-header">
-				<h1>Contact</h1>
-				<p>Have a question or want to work together? Reach out.</p>
+				<h1>Contact Us</h1>
+				<p>Schedule a consultation or ask us a question. We're here to help.</p>
 			</section>
 
-			<form class="contact-form" action="#" method="POST">
-				<div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" id="name" name="name" required />
-				</div>
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" id="email" name="email" required />
-				</div>
-				<div class="form-group">
-					<label for="phone">Phone Number (optional)</label>
-					<input type="tel" id="phone" name="phone" placeholder="e.g. +1 (555) 123-4567" />
-				</div>
-				<div class="form-group">
-					<label for="message">Message</label>
-					<textarea id="message" name="message" required></textarea>
-				</div>
-				<button type="submit">Send Message</button>
-			</form>
+			<div class="contact-layout">
+				<form class="contact-form" action="#" method="POST">
+					<h2>Schedule a Consultation</h2>
+					<div class="form-group">
+						<label for="name">Full Name</label>
+						<input type="text" id="name" name="name" required />
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required />
+					</div>
+					<div class="form-group">
+						<label for="phone">Phone Number</label>
+						<input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
+					</div>
+					<div class="form-group">
+						<label for="subject">How Can We Help?</label>
+						<select id="subject" name="subject" required>
+							<option value="" disabled selected>Select a practice area...</option>
+							<option value="family-law">Family Law</option>
+							<option value="estate-planning">Estate Planning</option>
+							<option value="business-law">Business Law</option>
+							<option value="criminal-defense">Criminal Defense</option>
+							<option value="immigration">Immigration</option>
+							<option value="personal-injury">Personal Injury</option>
+							<option value="other">Other / Not Sure</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="message">Tell Us About Your Situation</label>
+						<textarea id="message" name="message" required></textarea>
+					</div>
+					<button type="submit">Send Message</button>
+				</form>
 
-			<div class="contact-info">
-				<p>Or email me directly at <a href="mailto:hello@mayukheedas.com">hello@mayukheedas.com</a></p>
+				<aside class="contact-info">
+					<h2>Get in Touch</h2>
+					<div class="info-block">
+						<h3>📍 Office</h3>
+						<p>123 Main Street, Suite 400<br />City, State 12345</p>
+					</div>
+					<div class="info-block">
+						<h3>📞 Phone</h3>
+						<p><a href="tel:+15551234567">(555) 123-4567</a></p>
+					</div>
+					<div class="info-block">
+						<h3>✉️ Email</h3>
+						<p><a href="mailto:contact@thedaslaw.com">contact@thedaslaw.com</a></p>
+					</div>
+					<div class="info-block">
+						<h3>🕐 Office Hours</h3>
+						<p>Monday – Friday: 9:00 AM – 5:00 PM<br />Weekends: By appointment only</p>
+					</div>
+				</aside>
 			</div>
 		</main>
 		<Footer />
@@ -50,17 +82,28 @@ import { SITE_TITLE } from '../consts';
 	.page-header {
 		padding: 3rem 0 2rem;
 		border-bottom: 1px solid rgb(var(--gray-light));
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
+		text-align: center;
 	}
 	.page-header h1 {
-		font-size: 2rem;
+		font-size: 2.4rem;
+		color: #1a2744;
 	}
 	.page-header p {
 		color: rgb(var(--gray));
 		margin-top: 0.5rem;
 	}
-	.contact-form {
-		max-width: 480px;
+	.contact-layout {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 3rem;
+		align-items: start;
+	}
+	.contact-form h2,
+	.contact-info h2 {
+		font-size: 1.4rem;
+		color: #1a2744;
+		margin-bottom: 1.5rem;
 	}
 	.form-group {
 		margin-bottom: 1.5rem;
@@ -70,9 +113,11 @@ import { SITE_TITLE } from '../consts';
 		font-size: 0.9rem;
 		font-weight: 700;
 		margin-bottom: 0.4rem;
+		color: rgb(var(--gray-dark));
 	}
 	.form-group input,
-	.form-group textarea {
+	.form-group textarea,
+	.form-group select {
 		width: 100%;
 		padding: 0.7rem;
 		border: 1px solid rgb(var(--gray-light));
@@ -87,40 +132,64 @@ import { SITE_TITLE } from '../consts';
 		resize: vertical;
 	}
 	.form-group input:focus,
-	.form-group textarea:focus {
+	.form-group textarea:focus,
+	.form-group select:focus {
 		outline: none;
-		border-color: var(--accent);
+		border-color: #c9a84c;
+		box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
 	}
 	button[type="submit"] {
-		padding: 0.7rem 2rem;
-		background: var(--accent);
-		color: #fff;
+		padding: 0.8rem 2.5rem;
+		background: #c9a84c;
+		color: #1a2744;
 		border: none;
 		border-radius: 4px;
 		font-size: 1rem;
+		font-weight: 700;
 		cursor: pointer;
-		transition: opacity 0.2s;
+		transition: background 0.2s;
 	}
 	button[type="submit"]:hover {
-		opacity: 0.85;
+		background: #a07d2e;
+		color: #ffffff;
 	}
 	.contact-info {
-		margin-top: 3rem;
-		padding-top: 2rem;
-		border-top: 1px solid rgb(var(--gray-light));
+		background: #f8f9fa;
+		padding: 2rem;
+		border-radius: 8px;
 	}
-	.contact-info p {
+	.info-block {
+		margin-bottom: 1.5rem;
+	}
+	.info-block:last-child {
+		margin-bottom: 0;
+	}
+	.info-block h3 {
+		font-size: 1rem;
+		color: #1a2744;
+		margin-bottom: 0.3rem;
+	}
+	.info-block p {
 		color: rgb(var(--gray));
+		font-size: 0.95rem;
+		margin: 0;
+		line-height: 1.6;
+	}
+	.info-block a {
+		color: var(--accent-dark);
+		text-decoration: none;
+	}
+	.info-block a:hover {
+		color: var(--accent);
+	}
+	@media (max-width: 720px) {
+		.contact-layout {
+			grid-template-columns: 1fr;
+		}
 	}
 	@media (max-width: 480px) {
-		.page-header {
-			padding: 2rem 0 1.5rem;
-		}
 		.page-header h1 {
-			font-size: 1.6rem;
-		}
-		.contact-form {
-			max-width: 100%;
+			font-size: 1.8rem;
 		}
 	}
 </style>

@@ -3,13 +3,30 @@ const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Mayukhee Das. All rights reserved.
+	<div class="footer-content">
+		<p class="copyright">&copy; {today.getFullYear()} Das Law. All rights reserved.</p>
+		<p class="disclaimer">This website is for informational purposes only and does not constitute legal advice.</p>
+	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 4em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
+		padding: 2.5em 1em;
+		background: #1a2744;
+		color: rgba(255, 255, 255, 0.8);
 		text-align: center;
+	}
+	.footer-content {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.copyright {
+		margin-bottom: 0.5em;
+		font-weight: 700;
+		color: #ffffff;
+	}
+	.disclaimer {
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.6);
+		margin: 0;
 	}
 </style>

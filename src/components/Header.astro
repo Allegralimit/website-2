@@ -13,9 +13,9 @@ import { SITE_TITLE } from '../consts';
 		</button>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/practice-areas">Practice Areas</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/services">Services</HeaderLink>
-			<HeaderLink href="/portfolio">Portfolio</HeaderLink>
 			<HeaderLink href="/contact">Contact</HeaderLink>
 		</div>
 	</nav>
@@ -37,37 +37,44 @@ import { SITE_TITLE } from '../consts';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: #1a2744;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 		position: sticky;
 		top: 0;
 		z-index: 100;
 	}
 	h2 {
 		margin: 0;
-		font-size: 1em;
+		font-size: 1.2em;
 	}
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
+		color: #c9a84c;
+		font-weight: 700;
 	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		max-width: 720px;
+		max-width: 960px;
 		margin: 0 auto;
 		flex-wrap: wrap;
 	}
 	nav a {
 		padding: 1em 0.5em;
-		color: var(--black);
+		color: #ffffff;
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		transition: color 0.2s, border-color 0.2s;
+	}
+	nav a:hover {
+		color: #c9a84c;
 	}
 	nav a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		border-bottom-color: #c9a84c;
+		color: #c9a84c;
 	}
 	.menu-toggle {
 		display: none;
@@ -82,7 +89,7 @@ import { SITE_TITLE } from '../consts';
 		display: block;
 		width: 24px;
 		height: 2.5px;
-		background: rgb(var(--gray-dark));
+		background: #ffffff;
 		border-radius: 2px;
 		transition: transform 0.3s, opacity 0.3s;
 	}
@@ -97,6 +104,7 @@ import { SITE_TITLE } from '../consts';
 			flex-direction: column;
 			text-align: center;
 			padding-bottom: 0.5em;
+			background: #1a2744;
 		}
 		.internal-links.open {
 			display: flex;
@@ -105,7 +113,6 @@ import { SITE_TITLE } from '../consts';
 			padding: 0.75em 0;
 			border-bottom: none;
 		}
-		/* Animate hamburger to X */
 		.menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
 			transform: translateY(7.5px) rotate(45deg);
 		}
@@ -117,7 +124,7 @@ import { SITE_TITLE } from '../consts';
 		}
 	}
 
-	@media (min-width: 601px) and (max-width: 720px) {
+	@media (min-width: 601px) and (max-width: 960px) {
 		.internal-links {
 			font-size: 0.85em;
 		}

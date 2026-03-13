@@ -1,2 +1,2 @@
-export const SITE_TITLE = "Mayukhee Das";
-export const SITE_DESCRIPTION = "Welcome to my corner of the internet.";
+export const SITE_TITLE = "Das Law";
+export const SITE_DESCRIPTION = "Experienced legal counsel dedicated to protecting your rights and achieving the best outcomes for you and your family.";

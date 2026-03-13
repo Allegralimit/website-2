@@ -3,385 +3,52 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-
-const allPosts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-const featuredPosts = allPosts.filter((p) => p.data.featured);
-const recentPosts = allPosts.filter((p) => !p.data.featured);
-
-const categories = [
-	{ name: 'Strategy', icon: '🎯', description: 'Business strategy, roadmaps, and advisory insights' },
-	{ name: 'Services', icon: '⚙️', description: 'Professional services, consulting, and value creation' },
-	{ name: 'Transformation', icon: '🚀', description: 'Digital transformation, AI adoption, and modernization' },
-];
-
-function postsByCategory(cat: string) {
-	return allPosts.filter((p) => p.data.category === cat);
-}
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Blog — ${SITE_TITLE}`} description="Insights on strategy, services, and digital transformation." />
+		<BaseHead title={`Blog — ${SITE_TITLE}`} description="Legal insights and updates from Das Law." />
 	</head>
 	<body>
 		<Header />
-
-		<!-- Hero with fade -->
-		<section class="blog-hero">
-			<div class="blog-hero-mesh"></div>
-			<div class="blog-hero-content">
-				<h1>Blog</h1>
-				<p>Thoughts on strategy, professional services, and digital transformation.</p>
-			</div>
-			<div class="blog-hero-fade"></div>
-		</section>
-
 		<main>
-			<!-- Categories -->
-			<section class="categories-section">
-				<h2 class="section-label">Read by Category</h2>
-				<div class="categories-grid">
-					{categories.map((cat) => {
-						const count = postsByCategory(cat.name).length;
-						return (
-							<a href={`#cat-${cat.name.toLowerCase()}`} class="category-card">
-								<span class="category-icon">{cat.icon}</span>
-								<h3>{cat.name}</h3>
-								<p>{cat.description}</p>
-								<span class="category-count">{count} {count === 1 ? 'post' : 'posts'}</span>
-							</a>
-						);
-					})}
-				</div>
+			<section class="page-header">
+				<h1>Blog</h1>
+				<p>Legal insights, news, and updates from Das Law.</p>
 			</section>
 
-			<!-- Featured Blogs -->
-			{featuredPosts.length > 0 && (
-				<section class="featured-section">
-					<h2 class="section-label">Featured Blogs</h2>
-					<div class="featured-grid">
-						{featuredPosts.map((post) => (
-							<a href={`/blog/${post.id}/`} class="featured-card">
-								{post.data.heroImage && (
-									<img src={post.data.heroImage} alt="" class="featured-img" />
-								)}
-								<div class="featured-body">
-									{post.data.category && <span class="badge">{post.data.category}</span>}
-									<h3>{post.data.title}</h3>
-									<p>{post.data.description}</p>
-									<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
-								</div>
-							</a>
-						))}
-					</div>
-				</section>
-			)}
-
-			<!-- Recent Blogs -->
-			<section class="recent-section">
-				<h2 class="section-label">Recent Blogs</h2>
-				<div class="recent-grid">
-					{recentPosts.map((post) => (
-						<a href={`/blog/${post.id}/`} class="recent-card">
-							{post.data.heroImage && (
-								<img src={post.data.heroImage} alt="" class="recent-img" />
-							)}
-							<div class="recent-body">
-								{post.data.category && <span class="badge">{post.data.category}</span>}
-								<h3>{post.data.title}</h3>
-								<p>{post.data.description}</p>
-								<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
-							</div>
-						</a>
-					))}
-				</div>
-			</section>
-
-			<!-- Category Anchors -->
-			{categories.map((cat) => {
-				const posts = postsByCategory(cat.name);
-				return posts.length > 0 ? (
-					<section class="cat-section" id={`cat-${cat.name.toLowerCase()}`}>
-						<h2 class="section-label">{cat.icon} {cat.name}</h2>
-						<div class="recent-grid">
-							{posts.map((post) => (
-								<a href={`/blog/${post.id}/`} class="recent-card">
-									{post.data.heroImage && (
-										<img src={post.data.heroImage} alt="" class="recent-img" />
-									)}
-									<div class="recent-body">
-										<h3>{post.data.title}</h3>
-										<p>{post.data.description}</p>
-										<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
-									</div>
-								</a>
-							))}
-						</div>
-					</section>
-				) : null;
-			})}
+			<div class="empty-state">
+				<p>📝 Blog posts coming soon.</p>
+				<p>Check back for articles on legal topics, firm news, and helpful resources.</p>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
-	/* ── Hero with gradient fade ── */
-	.blog-hero {
-		position: relative;
-		background: linear-gradient(135deg, #0f1724 0%, #1a2744 40%, #243b6e 70%, #2337ff 100%);
-		padding: 5rem 1.5rem 6rem;
+	.page-header {
+		padding: 3rem 0 2rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2.5rem;
 		text-align: center;
-		overflow: hidden;
 	}
-	.blog-hero-mesh {
-		position: absolute;
-		inset: 0;
-		opacity: 0.07;
-		background-image:
-			linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
-		background-size: 60px 60px;
+	.page-header h1 {
+		font-size: 2.4rem;
+		color: #1a2744;
 	}
-	.blog-hero-content {
-		position: relative;
-		z-index: 1;
-		max-width: 620px;
-		margin: 0 auto;
-	}
-	.blog-hero h1 {
-		font-size: 2.8rem;
-		color: #fff;
-		margin-bottom: 0.5rem;
-	}
-	.blog-hero p {
-		color: rgba(255,255,255,0.7);
-		font-size: 1.15rem;
-		margin: 0;
-	}
-	/* Fade from hero into white content */
-	.blog-hero-fade {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 100px;
-		background: linear-gradient(to bottom, transparent, white);
-		pointer-events: none;
-	}
-
-	/* ── Main layout ── */
-	main {
-		max-width: 960px;
-		margin: 0 auto;
-		padding: 0 1.5rem 3rem;
-	}
-
-	/* ── Section labels ── */
-	.section-label {
-		font-size: 0.85rem;
-		text-transform: uppercase;
-		letter-spacing: 0.12em;
+	.page-header p {
 		color: rgb(var(--gray));
-		margin-bottom: 1.25rem;
-		font-weight: 600;
+		margin-top: 0.5rem;
 	}
-
-	/* ── Categories ── */
-	.categories-section {
-		padding: 2.5rem 0 2rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
-	}
-	.categories-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.25rem;
-	}
-	.category-card {
-		background: #f8f9fb;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 12px;
-		padding: 1.5rem;
-		text-decoration: none;
-		color: inherit;
-		transition: box-shadow 0.2s, transform 0.2s;
-	}
-	.category-card:hover {
-		box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-		transform: translateY(-2px);
-	}
-	.category-icon {
-		font-size: 1.8rem;
-		display: block;
-		margin-bottom: 0.5rem;
-	}
-	.category-card h3 {
-		font-size: 1.1rem;
-		margin-bottom: 0.3rem;
-	}
-	.category-card p {
-		font-size: 0.88rem;
-		color: rgb(var(--gray));
-		margin-bottom: 0.5rem;
-		line-height: 1.5;
-	}
-	.category-count {
-		font-size: 0.8rem;
-		color: rgb(var(--gray));
-		font-weight: 500;
-	}
-
-	/* ── Featured ── */
-	.featured-section {
-		padding: 2.5rem 0 2rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
-	}
-	.featured-grid {
-		display: grid;
-		gap: 1.5rem;
-	}
-	.featured-card {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1.5rem;
-		text-decoration: none;
-		color: inherit;
-		border-radius: 12px;
-		overflow: hidden;
-		border: 1px solid rgb(var(--gray-light));
-		transition: box-shadow 0.2s, transform 0.2s;
-	}
-	.featured-card:hover {
-		box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-		transform: translateY(-2px);
-	}
-	.featured-img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		min-height: 220px;
-	}
-	.featured-body {
-		padding: 1.5rem 1.5rem 1.5rem 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	.featured-body h3 {
-		font-size: 1.35rem;
-		margin-bottom: 0.5rem;
-		line-height: 1.3;
-	}
-	.featured-body p {
-		font-size: 0.92rem;
-		color: rgb(var(--gray));
-		line-height: 1.6;
-		margin-bottom: 0.75rem;
-	}
-
-	/* ── Badge ── */
-	.badge {
-		display: inline-block;
-		font-size: 0.72rem;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-weight: 600;
-		background: linear-gradient(135deg, #243b6e, #2337ff);
-		color: #fff;
-		padding: 0.2rem 0.6rem;
-		border-radius: 4px;
-		margin-bottom: 0.5rem;
-		width: fit-content;
-	}
-
-	/* ── Recent / Category posts grid ── */
-	.recent-section, .cat-section {
-		padding: 2.5rem 0 2rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
-	}
-	.recent-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.25rem;
-	}
-	.recent-card {
-		text-decoration: none;
-		color: inherit;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 12px;
-		overflow: hidden;
-		transition: box-shadow 0.2s, transform 0.2s;
-	}
-	.recent-card:hover {
-		box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-		transform: translateY(-2px);
-	}
-	.recent-img {
-		width: 100%;
-		height: 160px;
-		object-fit: cover;
-	}
-	.recent-body {
-		padding: 1rem;
-	}
-	.recent-body h3 {
-		font-size: 1rem;
-		margin-bottom: 0.3rem;
-		line-height: 1.3;
-	}
-	.recent-body p {
-		font-size: 0.85rem;
-		color: rgb(var(--gray));
-		line-height: 1.5;
-		margin-bottom: 0.5rem;
-	}
-	.post-date {
-		font-size: 0.78rem;
+	.empty-state {
+		text-align: center;
+		padding: 4rem 1rem;
 		color: rgb(var(--gray));
 	}
-
-	/* ── Responsive ── */
-	@media (max-width: 720px) {
-		.blog-hero {
-			padding: 3.5rem 1rem 4rem;
-		}
-		.blog-hero h1 {
-			font-size: 2rem;
-		}
-		.categories-grid {
-			grid-template-columns: 1fr;
-		}
-		.featured-card {
-			grid-template-columns: 1fr;
-		}
-		.featured-img {
-			min-height: 180px;
-		}
-		.featured-body {
-			padding: 1rem;
-		}
-		.recent-grid {
-			grid-template-columns: 1fr;
-		}
-	}
-	@media (max-width: 480px) {
-		.blog-hero {
-			padding: 2.5rem 1rem 3rem;
-		}
-		.blog-hero h1 {
-			font-size: 1.6rem;
-		}
-		.blog-hero p {
-			font-size: 1rem;
-		}
-		.featured-body h3 {
-			font-size: 1.15rem;
-		}
+	.empty-state p:first-child {
+		font-size: 1.3rem;
+		margin-bottom: 0.5rem;
 	}
 </style>
