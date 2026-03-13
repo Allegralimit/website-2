@@ -1,0 +1,126 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Contact — ${SITE_TITLE}`} description="Get in touch with me." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="page-header">
+				<h1>Contact</h1>
+				<p>Have a question or want to work together? Reach out.</p>
+			</section>
+
+			<form class="contact-form" action="#" method="POST">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required />
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required />
+				</div>
+				<div class="form-group">
+					<label for="phone">Phone Number (optional)</label>
+					<input type="tel" id="phone" name="phone" placeholder="e.g. +1 (555) 123-4567" />
+				</div>
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" required></textarea>
+				</div>
+				<button type="submit">Send Message</button>
+			</form>
+
+			<div class="contact-info">
+				<p>Or email me directly at <a href="mailto:hello@mayukheedas.com">hello@mayukheedas.com</a></p>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-header {
+		padding: 3rem 0 2rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 2rem;
+	}
+	.page-header h1 {
+		font-size: 2rem;
+	}
+	.page-header p {
+		color: rgb(var(--gray));
+		margin-top: 0.5rem;
+	}
+	.contact-form {
+		max-width: 480px;
+	}
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+	.form-group label {
+		display: block;
+		font-size: 0.9rem;
+		font-weight: 700;
+		margin-bottom: 0.4rem;
+	}
+	.form-group input,
+	.form-group textarea {
+		width: 100%;
+		padding: 0.7rem;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 4px;
+		font-family: inherit;
+		font-size: 1rem;
+		background: #fff;
+		color: rgb(var(--gray-dark));
+	}
+	.form-group textarea {
+		min-height: 150px;
+		resize: vertical;
+	}
+	.form-group input:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--accent);
+	}
+	button[type="submit"] {
+		padding: 0.7rem 2rem;
+		background: var(--accent);
+		color: #fff;
+		border: none;
+		border-radius: 4px;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: opacity 0.2s;
+	}
+	button[type="submit"]:hover {
+		opacity: 0.85;
+	}
+	.contact-info {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+	.contact-info p {
+		color: rgb(var(--gray));
+	}
+	@media (max-width: 480px) {
+		.page-header {
+			padding: 2rem 0 1.5rem;
+		}
+		.page-header h1 {
+			font-size: 1.6rem;
+		}
+		.contact-form {
+			max-width: 100%;
+		}
+	}
+</style>

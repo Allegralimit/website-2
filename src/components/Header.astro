@@ -1,0 +1,128 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header>
+	<nav>
+		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</button>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/services">Services</HeaderLink>
+			<HeaderLink href="/portfolio">Portfolio</HeaderLink>
+			<HeaderLink href="/contact">Contact</HeaderLink>
+		</div>
+	</nav>
+</header>
+
+<script>
+	const toggle = document.querySelector('.menu-toggle');
+	const links = document.querySelector('.internal-links');
+	if (toggle && links) {
+		toggle.addEventListener('click', () => {
+			const expanded = toggle.getAttribute('aria-expanded') === 'true';
+			toggle.setAttribute('aria-expanded', String(!expanded));
+			links.classList.toggle('open');
+		});
+	}
+</script>
+
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		position: sticky;
+		top: 0;
+		z-index: 100;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 720px;
+		margin: 0 auto;
+		flex-wrap: wrap;
+	}
+	nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.menu-toggle {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5em;
+		flex-direction: column;
+		gap: 5px;
+	}
+	.menu-toggle .bar {
+		display: block;
+		width: 24px;
+		height: 2.5px;
+		background: rgb(var(--gray-dark));
+		border-radius: 2px;
+		transition: transform 0.3s, opacity 0.3s;
+	}
+
+	@media (max-width: 600px) {
+		.menu-toggle {
+			display: flex;
+		}
+		.internal-links {
+			display: none;
+			width: 100%;
+			flex-direction: column;
+			text-align: center;
+			padding-bottom: 0.5em;
+		}
+		.internal-links.open {
+			display: flex;
+		}
+		.internal-links a {
+			padding: 0.75em 0;
+			border-bottom: none;
+		}
+		/* Animate hamburger to X */
+		.menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
+			transform: translateY(7.5px) rotate(45deg);
+		}
+		.menu-toggle[aria-expanded="true"] .bar:nth-child(2) {
+			opacity: 0;
+		}
+		.menu-toggle[aria-expanded="true"] .bar:nth-child(3) {
+			transform: translateY(-7.5px) rotate(-45deg);
+		}
+	}
+
+	@media (min-width: 601px) and (max-width: 720px) {
+		.internal-links {
+			font-size: 0.85em;
+		}
+		nav {
+			gap: 0.25em;
+		}
+	}
+</style>

@@ -1,0 +1,266 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Services — ${SITE_TITLE}`} description="Strategic consulting and transformation services for the modern enterprise." />
+	</head>
+	<body>
+		<Header />
+
+		<!-- Hero with fade -->
+		<section class="services-hero">
+			<div class="hero-mesh"></div>
+			<div class="hero-content">
+				<h1>Services</h1>
+				<p>Strategic consulting and transformation services that turn complexity into competitive advantage.</p>
+			</div>
+			<div class="hero-fade"></div>
+		</section>
+
+		<main>
+			<div class="services-grid">
+
+				<div class="service-card">
+					<div class="card-icon">📊</div>
+					<h3>Outcome-Based Business Modeling & P&L Engineering</h3>
+					<p class="card-subtitle">Helping firms pivot from traditional billing practices to a model that ties practice revenue to delivery outcome.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> Development of "Value-Linked" pricing structures where consulting fees are indexed to measurable business KPIs instead of operational KPIs (The levers vs the outcomes).</li>
+						<li><strong>The Deliverable:</strong> A customized Financial Impact Pro-Forma for each engagement that forecasts the project's contribution to the practice P&L, including margin performance and revenue recognition schedules.</li>
+						<li><strong>The Outcome:</strong> Maximized practice margins by shifting the conversation from "cost-plus" to "shared-value," ensuring 15%+ higher profitability than standard implementation services.</li>
+					</ul>
+				</div>
+
+				<div class="service-card">
+					<div class="card-icon">🤝</div>
+					<h3>Marketplace Partnership as Revenue Catalyst</h3>
+					<p class="card-subtitle">Building a sales pipeline and governance through strategic partnerships to drive growth.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> A proactive partnership engine that treats technology partners (ISVs) as a primary sales force while integrating with the broader ecosystem.</li>
+						<li><strong>The Deliverable:</strong> Joint Solution Bundles and Go-to-Market (GTM) Playbooks created in collaboration with partner sales organizations to drive co-selling motions.</li>
+						<li><strong>The Outcome:</strong> A predictable, high-velocity revenue pipeline that reduces the cost of customer acquisition (CAC) and increases the "services attach rate" on software deals.</li>
+					</ul>
+				</div>
+
+				<div class="service-card">
+					<div class="card-icon">📈</div>
+					<h3>Strategic Consulting on Expansion Services</h3>
+					<p class="card-subtitle">Focus on long-term client success and recurring revenue growth within existing strategic accounts.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> A Continuous Value Realization (CVR) Program designed to identify expansion opportunities beyond the initial implementation.</li>
+						<li><strong>The Deliverable:</strong> Semi-annual "Business Value Reviews" (BVRs) for C-suite stakeholders that quantify the ROI achieved to date and propose the next phase of the AI transformation roadmap.</li>
+						<li><strong>The Outcome:</strong> Increased "Wallet Share" through the upsell of managed services and advanced AI modules, securing long-term, high-margin recurring revenue contracts.</li>
+					</ul>
+				</div>
+
+				<div class="service-card">
+					<div class="card-icon">🏗️</div>
+					<h3>Architecture & Solution Design</h3>
+					<p class="card-subtitle">Solution design beyond traditional telephony to create a unified, AI-driven technical blueprint.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> Designing a cognitive Contact Center with AI-first architecture that integrates native applications (enterprise LLMs and CRM data).</li>
+						<li><strong>Deliverable:</strong> A high-level Solution Architecture Document (SAD) featuring a "Golden Image" for AI orchestration, including secure API gateways for real-time data streaming.</li>
+						<li><strong>The Outcome:</strong> A scalable, compliant, Human-First AI Ecosystem that prioritizes customer interactions while automating back-office workflows and boosting agent productivity.</li>
+					</ul>
+				</div>
+
+				<div class="service-card">
+					<div class="card-icon">⚡</div>
+					<h3>Proprietary AI Solution Accelerators (IP Development)</h3>
+					<p class="card-subtitle">Packaged offerings and repeatable IP for faster, higher-margin delivery.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> The deployment of pre-built "Solution Accelerators" such as standardized flows for industry verticals and automated QA models.</li>
+						<li><strong>Deliverable:</strong> A library of repeatable code, templates, and "Solution Patterns" that reduce custom development time by 30-40%.</li>
+						<li><strong>Outcome:</strong> Faster "time-to-value" for the client and higher margins for the practice by shifting from manual labor to IP-based delivery.</li>
+					</ul>
+				</div>
+
+				<div class="service-card">
+					<div class="card-icon">🔄</div>
+					<h3>Transformation & Enablement (Change Management)</h3>
+					<p class="card-subtitle">Addressing the "human element" of digital transformation for lasting AI adoption.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> An organizational change management framework specifically designed for AI adoption, addressing the "human element" of digital transformation.</li>
+						<li><strong>Deliverable:</strong> Customized Enablement Playbooks for agents and supervisors, including change management and training with historical and real-time analytics.</li>
+						<li><strong>Outcome:</strong> Accelerated adoption of tools and mitigated cultural resistance, ensuring that AI investments result in measurable productivity gains.</li>
+					</ul>
+				</div>
+
+				<div class="service-card">
+					<div class="card-icon">🎯</div>
+					<h3>CCaaS & AI Maturity Assessment</h3>
+					<p class="card-subtitle">The "visioning" entry point to help customers understand the business value of an AI-first approach.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> A multi-dimensional assessment of the current state across technical debt, data readiness for AI, and operational KPI benchmarks.</li>
+						<li><strong>Deliverable:</strong> A Transformation Roadmap that prioritizes AI use cases (e.g., bot deflection, sentiment analytics) based on projected ROI and implementation complexity.</li>
+						<li><strong>Outcome:</strong> An executive-level business case that justifies migration by translating complex technology into an outcome-driven narrative.</li>
+					</ul>
+				</div>
+
+				<div class="service-card">
+					<div class="card-icon">👥</div>
+					<h3>Resource Optimization & Capacity Forecasting</h3>
+					<p class="card-subtitle">Designed to avoid the common pitfall of overselling and under-delivering.</p>
+					<ul>
+						<li><strong>Service Offering:</strong> Design a repeatable framework to forecast staffing needs and constraints based on the sales pipeline and historical data.</li>
+						<li><strong>Deliverable:</strong> A Capacity & Utilization Roadmap that identifies talent gaps, optimizes global delivery ratios (onshore/offshore mix), and provides a data-driven hiring strategy.</li>
+						<li><strong>Outcome:</strong> Elimination of "bench waste," margin erosion and over-utilization burnout, maintaining a target gross margin of 40%+ by precisely matching workforce capacity to ongoing projects in real time.</li>
+					</ul>
+				</div>
+
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	/* ── Hero ── */
+	.services-hero {
+		position: relative;
+		background: linear-gradient(135deg, #0f1724 0%, #1a2744 40%, #243b6e 70%, #2337ff 100%);
+		padding: 5rem 1.5rem 6rem;
+		text-align: center;
+		overflow: hidden;
+	}
+	.hero-mesh {
+		position: absolute;
+		inset: 0;
+		opacity: 0.07;
+		background-image:
+			linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+		background-size: 60px 60px;
+	}
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 660px;
+		margin: 0 auto;
+	}
+	.services-hero h1 {
+		font-size: 2.8rem;
+		color: #fff;
+		margin-bottom: 0.5rem;
+	}
+	.services-hero p {
+		color: rgba(255,255,255,0.7);
+		font-size: 1.15rem;
+		margin: 0;
+	}
+	.hero-fade {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100px;
+		background: linear-gradient(to bottom, transparent, #f6f8fc);
+		pointer-events: none;
+	}
+
+	/* ── Page background ── */
+	main {
+		background: linear-gradient(180deg, #f6f8fc 0%, #ffffff 40%);
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 1.5rem 4rem;
+	}
+
+	/* ── Services grid ── */
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+		padding-top: 2rem;
+	}
+
+	/* ── Card ── */
+	.service-card {
+		background: #ffffff;
+		border: 1px solid rgba(0,0,0,0.06);
+		border-radius: 14px;
+		padding: 1.75rem;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+		transition: box-shadow 0.25s, transform 0.25s;
+	}
+	.service-card:hover {
+		box-shadow: 0 8px 30px rgba(35,55,255,0.1);
+		transform: translateY(-3px);
+	}
+	.card-icon {
+		font-size: 2rem;
+		margin-bottom: 0.75rem;
+	}
+	.service-card h3 {
+		font-size: 1.15rem;
+		margin-bottom: 0.4rem;
+		line-height: 1.35;
+		color: #1a2744;
+	}
+	.card-subtitle {
+		font-size: 0.92rem;
+		color: rgb(var(--gray));
+		line-height: 1.55;
+		margin-bottom: 1rem;
+		font-style: italic;
+	}
+	.service-card ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.service-card li {
+		position: relative;
+		padding-left: 1rem;
+		margin-bottom: 0.65rem;
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		line-height: 1.6;
+	}
+	.service-card li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.55em;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: linear-gradient(135deg, #243b6e, #2337ff);
+	}
+
+	/* ── Responsive ── */
+	@media (max-width: 720px) {
+		.services-hero {
+			padding: 3.5rem 1rem 4rem;
+		}
+		.services-hero h1 {
+			font-size: 2rem;
+		}
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+	@media (max-width: 480px) {
+		.services-hero {
+			padding: 2.5rem 1rem 3rem;
+		}
+		.services-hero h1 {
+			font-size: 1.6rem;
+		}
+		.services-hero p {
+			font-size: 1rem;
+		}
+		.service-card {
+			padding: 1.25rem;
+		}
+		.service-card h3 {
+			font-size: 1.05rem;
+		}
+	}
+</style>

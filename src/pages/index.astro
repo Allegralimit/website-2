@@ -1,0 +1,266 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+).slice(0, 3);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<section class="hero-banner">
+			<div class="hero-mesh"></div>
+			<div class="hero-glow"></div>
+			<div class="hero-content">
+				<a href="https://www.linkedin.com/in/mayukhee-das/" target="_blank" rel="noopener noreferrer">
+					<img src="/profile.jpg" alt="Mayukhee" class="profile-pic" />
+				</a>
+				<h1>Hi, I'm Mayukhee — your CCaaS partner</h1>
+				<p class="hero-tagline">Welcome to my corner of the internet. I write, build, and share things here.</p>
+			</div>
+		</section>
+		<main>
+
+			<section class="about">
+				<h2>About Me</h2>
+				<p>
+					A pioneer in AI and Digital Transformation, I bring a decade of leadership to B2B SaaS, specially CCaaS practice. I combine P&L ownership and deep technical fluency in AI-first CCaaS ecosystems including UCaaS, CX and CRMs to translate complex cloud architectures into quantifiable business outcomes and high-margin consulting practices.
+				</p>
+				<p>
+					As a CCaaS Practice Leader, I bridge the gap between complex cloud architecture and boardroom objectives. Having steered a $45M+ global portfolio with over 80 clients across high-stakes industries like Banking, Healthcare, and Telecom, I act as a strategic catalyst—transforming legacy cost centers into AI-driven profit engines. My leadership is defined by a relentless focus on 'outcome-based' transformation, ensuring compliance and operational excellence. From engineering the economics of modern customer experience to optimizing multi-regional P&L performance, I empower organizations to scale their CCaaS/CX infrastructure with the security, speed, and financial rigor required in today's digital economy. I don't just implement technology; I build the future of customer experience.
+				</p>
+				<p>
+					Discover how my unique expertise in AI and technology consulting can elevate your business to new heights.
+				</p>
+
+				<p class="linkedin-link">
+					<a href="https://www.linkedin.com/in/mayukhee-das/" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn →</a>
+				</p>
+
+				<h3>Areas of Expertise</h3>
+				<ul class="expertise-list">
+					<li>AI and Digital Transformation</li>
+					<li>IT Consulting (Product-based or Service-based)</li>
+					<li>Vendor Evaluation and Selection</li>
+					<li>Program and Project Management</li>
+					<li>GTM, Sales Enablement, Implementation</li>
+					<li>Pipeline Expansion, Portfolio Management and Revenue Realization</li>
+					<li>Customer Success Plan and Business Development</li>
+					<li>Strategy Consulting and Advisory Services</li>
+					<li>Start-up, Risk and Change Management</li>
+					<li>Custom Solutions for Industry Verticals</li>
+					<li>Solution Architecture and Enterprise Architecture</li>
+					<li>Operational Excellence — Standards, Frameworks, Tools and Methodologies</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Recent Posts</h2>
+				<ul class="post-list">
+					{posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>
+								<h3>{post.data.title}</h3>
+								<FormattedDate date={post.data.pubDate} />
+								<p>{post.data.description}</p>
+							</a>
+						</li>
+					))}
+				</ul>
+				<p><a href="/blog">View all posts &rarr;</a></p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	/* ── Hero Banner ── */
+	.hero-banner {
+		position: relative;
+		background: linear-gradient(135deg, #0f1724 0%, #1a2744 40%, #243b6e 70%, #2337ff 100%);
+		padding: 5rem 1.5rem 4rem;
+		text-align: center;
+		overflow: hidden;
+	}
+	/* Subtle geometric mesh overlay */
+	.hero-mesh {
+		position: absolute;
+		inset: 0;
+		opacity: 0.07;
+		background-image:
+			linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+		background-size: 60px 60px;
+	}
+	/* Radial glow behind the photo */
+	.hero-glow {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		translate: -50% -55%;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(35,55,255,0.35) 0%, transparent 70%);
+		border-radius: 50%;
+		pointer-events: none;
+	}
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	.profile-pic {
+		width: 160px;
+		height: 160px;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center 20%;
+		margin-bottom: 1.5rem;
+		border: 4px solid rgba(255,255,255,0.25);
+		box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+		transition: border-color 0.3s, transform 0.3s;
+	}
+	.profile-pic:hover {
+		border-color: rgba(255,255,255,0.6);
+		transform: scale(1.04);
+	}
+	.hero-banner h1 {
+		font-size: 2.6rem;
+		margin-bottom: 0.5rem;
+		color: #fff;
+	}
+	.hero-tagline {
+		color: rgba(255,255,255,0.75);
+		font-size: 1.15rem;
+		margin: 0;
+	}
+	/* Smooth curve transition from hero to content */
+	.hero-banner::after {
+		content: '';
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		right: 0;
+		height: 60px;
+		background: white;
+		border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+	}
+	@media (max-width: 720px) {
+		.hero-banner {
+			padding: 3.5rem 1rem 3rem;
+		}
+		.hero-banner h1 {
+			font-size: 2rem;
+		}
+		.profile-pic {
+			width: 130px;
+			height: 130px;
+		}
+		.expertise-list {
+			columns: 1;
+		}
+	}
+	@media (max-width: 480px) {
+		.hero-banner {
+			padding: 2.5rem 1rem 2rem;
+		}
+		.hero-banner h1 {
+			font-size: 1.6rem;
+		}
+		.hero-tagline {
+			font-size: 1rem;
+		}
+		.profile-pic {
+			width: 110px;
+			height: 110px;
+		}
+		.post-list h3 {
+			font-size: 1.1rem;
+		}
+	}
+	.about {
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.about p {
+		color: rgb(var(--gray-dark, var(--gray)));
+		line-height: 1.7;
+		margin-bottom: 1rem;
+	}
+	.about h3 {
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: rgb(var(--gray));
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	.linkedin-link a {
+		color: #2337ff;
+		font-weight: 500;
+		text-decoration: none;
+		transition: opacity 0.2s;
+	}
+	.linkedin-link a:hover {
+		opacity: 0.7;
+	}
+	.expertise-list {
+		columns: 2;
+		gap: 1rem;
+		padding-left: 1.2rem;
+	}
+	.expertise-list li {
+		margin-bottom: 0.5rem;
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+	}
+	h2 {
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+	}
+	.post-list {
+		list-style: none;
+		padding: 0;
+	}
+	.post-list li {
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.post-list a {
+		text-decoration: none;
+		color: inherit;
+	}
+	.post-list a:hover h3 {
+		color: var(--accent);
+	}
+	.post-list h3 {
+		font-size: 1.3rem;
+		margin-bottom: 0.2rem;
+		transition: color 0.2s;
+	}
+	.post-list time {
+		font-size: 0.85rem;
+		color: rgb(var(--gray));
+	}
+	.post-list p {
+		color: rgb(var(--gray));
+		margin-top: 0.3rem;
+	}
+</style>
