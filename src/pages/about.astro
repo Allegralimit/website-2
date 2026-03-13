@@ -12,15 +12,12 @@ import { SITE_TITLE } from '../consts';
 	</head>
 	<body>
 		<Header />
-
-		<section class="hero">
-			<div class="hero-content">
+		<main>
+			<section class="page-header">
 				<h1>About Das Law</h1>
 				<p>Dedicated legal professionals committed to justice, integrity, and your success.</p>
-			</div>
-		</section>
+			</section>
 
-		<main>
 			<!-- Firm Overview -->
 			<section class="section">
 				<h2>Our Firm</h2>
@@ -34,25 +31,22 @@ import { SITE_TITLE } from '../consts';
 				<p class="mission-text">To provide compassionate, results-driven legal services that empower individuals and families to protect what matters most — their rights, their livelihoods, and their futures.</p>
 			</section>
 
-			<!-- Attorney Bios (Placeholder) -->
+			<!-- Attorney Bios -->
 			<section class="section">
 				<h2>Our Team</h2>
 				<p class="team-intro">Our attorneys bring diverse experience and a shared commitment to excellence.</p>
-				<div class="team-grid">
-					<div class="attorney-card">
-						<div class="attorney-avatar">👤</div>
+				<div class="team-list">
+					<div class="attorney-item">
 						<h3>Attorney Name</h3>
 						<p class="attorney-role">Founding Partner</p>
 						<p>Bio coming soon.</p>
 					</div>
-					<div class="attorney-card">
-						<div class="attorney-avatar">👤</div>
+					<div class="attorney-item">
 						<h3>Attorney Name</h3>
 						<p class="attorney-role">Associate Attorney</p>
 						<p>Bio coming soon.</p>
 					</div>
-					<div class="attorney-card">
-						<div class="attorney-avatar">👤</div>
+					<div class="attorney-item">
 						<h3>Attorney Name</h3>
 						<p class="attorney-role">Associate Attorney</p>
 						<p>Bio coming soon.</p>
@@ -61,9 +55,9 @@ import { SITE_TITLE } from '../consts';
 			</section>
 
 			<!-- Values -->
-			<section class="section values-section">
+			<section class="section">
 				<h2>Our Values</h2>
-				<div class="values-grid">
+				<div class="values-list">
 					<div class="value-item">
 						<h3>Integrity</h3>
 						<p>We uphold the highest ethical standards in every case and every interaction.</p>
@@ -88,148 +82,117 @@ import { SITE_TITLE } from '../consts';
 </html>
 
 <style>
-	/* ── Hero ── */
-	.hero {
-		background: linear-gradient(135deg, #0f1724 0%, #1a2744 50%, #243b6e 100%);
-		padding: 4rem 1.5rem;
-		text-align: center;
+	.page-header {
+		padding: 2rem 0 1.5rem;
+		border-bottom: 2px solid var(--accent);
+		margin-bottom: 2rem;
 	}
-	.hero-content {
-		max-width: 720px;
-		margin: 0 auto;
+	.page-header h1 {
+		font-size: 2rem;
+		color: var(--text-dark);
 	}
-	.hero h1 {
-		color: #ffffff;
-		font-size: 2.6rem;
-		margin-bottom: 0.75rem;
-	}
-	.hero p {
-		color: rgba(255, 255, 255, 0.8);
-		font-size: 1.15rem;
-		margin: 0;
+	.page-header p {
+		color: var(--text-muted);
+		margin-top: 0.5rem;
+		font-size: 1.05rem;
 	}
 
-	/* ── Sections ── */
 	.section {
-		margin-bottom: 3rem;
+		margin-bottom: 2.5rem;
 		padding-bottom: 2rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid var(--border-light);
 	}
 	.section:last-child {
 		border-bottom: none;
 	}
 	.section h2 {
-		font-size: 1.8rem;
-		color: #1a2744;
+		font-size: 1.6rem;
+		color: var(--text-dark);
 		margin-bottom: 1rem;
 	}
 	.section p {
-		color: rgb(var(--gray-dark));
+		color: var(--text-dark);
 		line-height: 1.7;
 	}
 
-	/* ── Mission ── */
+	/* Mission */
 	.mission-section {
-		background: #f8f9fa;
-		padding: 2.5rem;
-		border-radius: 8px;
-		margin-left: -1em;
-		margin-right: -1em;
+		background: #ffffff;
+		padding: 2rem;
 		text-align: center;
+		box-shadow: var(--panel-shadow);
 	}
 	.mission-text {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		font-style: italic;
-		color: #1a2744;
+		color: var(--accent-dark);
 		max-width: 640px;
 		margin: 0 auto;
 		line-height: 1.6;
 	}
 
-	/* ── Team ── */
+	/* Team */
 	.team-intro {
-		text-align: center;
-		color: rgb(var(--gray));
-		margin-bottom: 2rem;
+		color: var(--text-muted);
+		margin-bottom: 1.5rem;
 	}
-	.team-grid {
+	.team-list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
 	}
-	.attorney-card {
-		text-align: center;
+	.attorney-item {
 		background: #ffffff;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 8px;
-		padding: 2rem 1.5rem;
+		padding: 1.5rem;
+		box-shadow: var(--panel-shadow);
 	}
-	.attorney-avatar {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
-	.attorney-card h3 {
-		font-size: 1.2rem;
-		color: #1a2744;
-		margin-bottom: 0.25rem;
+	.attorney-item h3 {
+		font-size: 1.1rem;
+		color: var(--text-dark);
+		margin-bottom: 0.2rem;
 	}
 	.attorney-role {
-		color: #c9a84c;
+		color: var(--accent);
 		font-weight: 700;
-		font-size: 0.9rem;
+		font-size: 0.85rem;
 		margin-bottom: 0.5rem;
 	}
-	.attorney-card p:last-child {
-		color: rgb(var(--gray));
+	.attorney-item p:last-child {
+		color: var(--text-muted);
 		font-size: 0.9rem;
 		margin: 0;
 	}
 
-	/* ── Values ── */
-	.values-section {
-		border-bottom: none;
-	}
-	.values-grid {
+	/* Values */
+	.values-list {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5rem;
+		gap: 1.25rem;
 	}
 	.value-item {
-		padding: 1.5rem;
+		padding: 1.25rem;
 		background: #ffffff;
-		border-left: 4px solid #c9a84c;
-		border-radius: 0 8px 8px 0;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+		border-left: 3px solid var(--accent);
+		box-shadow: var(--panel-shadow);
 	}
 	.value-item h3 {
-		font-size: 1.1rem;
-		color: #1a2744;
-		margin-bottom: 0.5rem;
+		font-size: 1.05rem;
+		color: var(--text-dark);
+		margin-bottom: 0.4rem;
 	}
 	.value-item p {
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
+		color: var(--text-muted);
+		font-size: 0.92rem;
 		margin: 0;
 		line-height: 1.5;
 	}
 
 	@media (max-width: 720px) {
-		.hero h1 {
-			font-size: 2rem;
-		}
-		.team-grid {
+		.team-list {
 			grid-template-columns: 1fr;
 		}
-		.values-grid {
+		.values-list {
 			grid-template-columns: 1fr;
-		}
-	}
-	@media (max-width: 480px) {
-		.hero {
-			padding: 3rem 1rem;
-		}
-		.hero h1 {
-			font-size: 1.7rem;
 		}
 	}
 </style>

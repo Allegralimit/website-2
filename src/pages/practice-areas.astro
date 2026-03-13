@@ -13,45 +13,39 @@ import { SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<section class="page-header">
+			<div class="page-panel">
 				<h1>Practice Areas</h1>
-				<p>Das Law provides experienced legal counsel across a broad range of practice areas. Whatever legal challenge you face, our team is ready to help.</p>
-			</section>
+				<p class="subtitle">Das Law provides experienced legal counsel across a broad range of practice areas. Whatever legal challenge you face, our team is ready to help.</p>
+			</div>
 
-			<div class="areas-grid">
-				<div class="area-card">
-					<div class="area-icon">⚖️</div>
-					<h2>Family Law</h2>
+			<div class="areas-list">
+				<div class="area-card" id="family-law">
+					<h2>⚖️ Family Law</h2>
 					<p>Navigating family legal matters requires both legal expertise and compassionate guidance. We represent clients in divorce and separation, child custody and visitation, child and spousal support, adoption, prenuptial and postnuptial agreements, and domestic violence protective orders. We understand the emotional complexity of family disputes and work to achieve resolutions that protect your interests and your children's well-being.</p>
 				</div>
 
-				<div class="area-card">
-					<div class="area-icon">📜</div>
-					<h2>Estate Planning</h2>
+				<div class="area-card" id="estate-planning">
+					<h2>📜 Estate Planning</h2>
 					<p>Protecting your legacy and providing for your loved ones requires careful planning. Our estate planning services include wills and living trusts, powers of attorney and healthcare directives, probate and estate administration, trust administration, guardianship and conservatorship, and asset protection strategies. We help you create a comprehensive plan that reflects your wishes and minimizes the burden on your family.</p>
 				</div>
 
-				<div class="area-card">
-					<div class="area-icon">🏢</div>
-					<h2>Business Law</h2>
+				<div class="area-card" id="business-law">
+					<h2>🏢 Business Law</h2>
 					<p>From startup to succession, we provide legal counsel at every stage of your business journey. Our services include entity formation and structuring, contract drafting and negotiation, mergers and acquisitions, employment law compliance, intellectual property protection, and commercial litigation. We serve as trusted advisors helping you make informed decisions that drive growth while managing risk.</p>
 				</div>
 
-				<div class="area-card">
-					<div class="area-icon">🛡️</div>
-					<h2>Criminal Defense</h2>
+				<div class="area-card" id="criminal-defense">
+					<h2>🛡️ Criminal Defense</h2>
 					<p>When you're facing criminal charges, you need an attorney who will fight aggressively for your rights. We defend clients against felony and misdemeanor charges, DUI/DWI, drug offenses, white-collar crimes, assault and violent offenses, and federal charges. From investigation through trial and appeal, we provide vigorous defense while keeping you informed and prepared at every stage.</p>
 				</div>
 
-				<div class="area-card">
-					<div class="area-icon">🌐</div>
-					<h2>Immigration</h2>
+				<div class="area-card" id="immigration">
+					<h2>🌐 Immigration</h2>
 					<p>Whether you're seeking to build a new life in the United States or bring your family together, we guide you through the complex immigration system. We handle family-based and employment-based visas, green card applications, naturalization and citizenship, asylum and refugee cases, deportation defense, and DACA and TPS applications. We advocate tirelessly for immigrants and their families.</p>
 				</div>
 
-				<div class="area-card">
-					<div class="area-icon">🩹</div>
-					<h2>Personal Injury</h2>
+				<div class="area-card" id="personal-injury">
+					<h2>🩹 Personal Injury</h2>
 					<p>If you've been injured due to someone else's negligence, you deserve fair compensation. We handle auto accidents, slip and fall injuries, medical malpractice, workplace injuries, product liability, and wrongful death claims. We work on a contingency basis — you pay nothing unless we recover compensation for you. Our goal is to secure the maximum recovery for your injuries, lost wages, and pain and suffering.</p>
 				</div>
 			</div>
@@ -61,56 +55,47 @@ import { SITE_TITLE } from '../consts';
 </html>
 
 <style>
-	.page-header {
-		padding: 3rem 0 2rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		margin-bottom: 2.5rem;
-		text-align: center;
+	.page-panel {
+		background: #ffffff;
+		padding: 2rem 2.5rem;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+		margin-bottom: 1.5rem;
 	}
-	.page-header h1 {
-		font-size: 2.4rem;
-		color: #1a2744;
+	.page-panel h1 {
+		font-size: 2rem;
+		color: #2d2d2d;
+		margin-bottom: 0.5rem;
 	}
-	.page-header p {
-		color: rgb(var(--gray));
-		max-width: 640px;
-		margin: 0.5rem auto 0;
+	.subtitle {
+		color: #666666;
+		margin: 0;
 		line-height: 1.6;
 	}
-	.areas-grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 2rem;
+	.areas-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 	.area-card {
 		background: #ffffff;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 8px;
-		padding: 2rem;
-		transition: box-shadow 0.2s;
-	}
-	.area-card:hover {
-		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-	}
-	.area-icon {
-		font-size: 2rem;
-		margin-bottom: 0.75rem;
+		padding: 2rem 2.5rem;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 	}
 	.area-card h2 {
-		font-size: 1.5rem;
-		color: #1a2744;
+		font-size: 1.4rem;
+		color: #2d2d2d;
 		margin-bottom: 0.75rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid #3a6d8c;
 	}
 	.area-card p {
-		color: rgb(var(--gray-dark));
+		color: #444444;
 		line-height: 1.7;
 		margin: 0;
 		font-size: 0.95rem;
 	}
-	@media (max-width: 480px) {
-		.page-header h1 {
-			font-size: 1.8rem;
-		}
+	@media (max-width: 720px) {
+		.page-panel,
 		.area-card {
 			padding: 1.5rem;
 		}

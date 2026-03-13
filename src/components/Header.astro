@@ -4,26 +4,30 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
+	<div class="top-bar">
+		<div class="top-bar-inner">
+			<div class="firm-name"><a href="/">{SITE_TITLE}</a></div>
+			<div class="phone"><a href="tel:+15555555555">(555) 555-5555</a></div>
+		</div>
+	</div>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-			<span class="bar"></span>
-			<span class="bar"></span>
-			<span class="bar"></span>
-		</button>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/practice-areas">Practice Areas</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
+		<div class="nav-inner">
+			<button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+				☰ Menu
+			</button>
+			<div class="nav-links">
+				<HeaderLink href="/">Home</HeaderLink>
+				<HeaderLink href="/about">About</HeaderLink>
+				<HeaderLink href="/practice-areas">Practice Areas</HeaderLink>
+				<HeaderLink href="/contact">Contact</HeaderLink>
+			</div>
 		</div>
 	</nav>
 </header>
 
 <script>
 	const toggle = document.querySelector('.menu-toggle');
-	const links = document.querySelector('.internal-links');
+	const links = document.querySelector('.nav-links');
 	if (toggle && links) {
 		toggle.addEventListener('click', () => {
 			const expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -36,100 +40,114 @@ import { SITE_TITLE } from '../consts';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
-		background: #1a2744;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 		position: sticky;
 		top: 0;
 		z-index: 100;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.2em;
+
+	/* Top bar - dark charcoal with firm name and phone */
+	.top-bar {
+		background: #333333;
+		padding: 0.75em 1em;
 	}
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-		color: #c9a84c;
-		font-weight: 700;
-	}
-	nav {
+	.top-bar-inner {
+		max-width: 960px;
+		margin: 0 auto;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+	}
+	.firm-name {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: 1.6em;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+	}
+	.firm-name a {
+		color: #ffffff;
+		text-decoration: none;
+	}
+	.firm-name a:hover {
+		color: #cccccc;
+	}
+	.phone a {
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 1.1em;
+		font-weight: 700;
+	}
+	.phone a:hover {
+		color: #cccccc;
+	}
+
+	/* Nav bar - slate blue / steel blue */
+	nav {
+		background: #4a6a7a;
+	}
+	.nav-inner {
 		max-width: 960px;
 		margin: 0 auto;
-		flex-wrap: wrap;
+		display: flex;
+		align-items: center;
+		padding: 0 1em;
+	}
+	.nav-links {
+		display: flex;
+		align-items: center;
 	}
 	nav a {
-		padding: 1em 0.5em;
+		display: inline-block;
+		padding: 0.7em 1.25em;
 		color: #ffffff;
-		border-bottom: 4px solid transparent;
 		text-decoration: none;
-		transition: color 0.2s, border-color 0.2s;
+		font-size: 0.95em;
+		transition: background 0.2s;
 	}
 	nav a:hover {
-		color: #c9a84c;
+		background: rgba(255, 255, 255, 0.15);
+		color: #ffffff;
 	}
 	nav a.active {
-		text-decoration: none;
-		border-bottom-color: #c9a84c;
-		color: #c9a84c;
+		background: rgba(255, 255, 255, 0.2);
+		color: #ffffff;
+		font-weight: 700;
 	}
 	.menu-toggle {
 		display: none;
 		background: none;
 		border: none;
+		color: #ffffff;
+		font-size: 1em;
 		cursor: pointer;
-		padding: 0.5em;
-		flex-direction: column;
-		gap: 5px;
-	}
-	.menu-toggle .bar {
-		display: block;
-		width: 24px;
-		height: 2.5px;
-		background: #ffffff;
-		border-radius: 2px;
-		transition: transform 0.3s, opacity 0.3s;
+		padding: 0.75em 0;
 	}
 
 	@media (max-width: 600px) {
 		.menu-toggle {
-			display: flex;
+			display: block;
 		}
-		.internal-links {
+		.nav-links {
 			display: none;
 			width: 100%;
 			flex-direction: column;
-			text-align: center;
+			text-align: left;
 			padding-bottom: 0.5em;
-			background: #1a2744;
 		}
-		.internal-links.open {
+		.nav-links.open {
 			display: flex;
 		}
-		.internal-links a {
-			padding: 0.75em 0;
-			border-bottom: none;
+		.nav-inner {
+			flex-wrap: wrap;
 		}
-		.menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
-			transform: translateY(7.5px) rotate(45deg);
+		.nav-links a {
+			padding: 0.6em 1em;
+			width: 100%;
 		}
-		.menu-toggle[aria-expanded="true"] .bar:nth-child(2) {
-			opacity: 0;
+		.firm-name {
+			font-size: 1.2em;
 		}
-		.menu-toggle[aria-expanded="true"] .bar:nth-child(3) {
-			transform: translateY(-7.5px) rotate(-45deg);
-		}
-	}
-
-	@media (min-width: 601px) and (max-width: 960px) {
-		.internal-links {
-			font-size: 0.85em;
-		}
-		nav {
-			gap: 0.25em;
+		.phone a {
+			font-size: 0.95em;
 		}
 	}
 </style>

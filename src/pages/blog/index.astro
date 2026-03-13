@@ -13,14 +13,17 @@ import { SITE_TITLE } from '../../consts';
 	<body>
 		<Header />
 		<main>
-			<section class="page-header">
+			<div class="page-panel">
 				<h1>Blog</h1>
-				<p>Legal insights, news, and updates from Das Law.</p>
-			</section>
+				<p class="subtitle">Legal insights, news, and updates from Das Law.</p>
+			</div>
 
-			<div class="empty-state">
-				<p>📝 Blog posts coming soon.</p>
-				<p>Check back for articles on legal topics, firm news, and helpful resources.</p>
+			<div class="content-panel">
+				<div class="empty-state">
+					<p class="empty-icon">📝</p>
+					<p class="empty-title">Blog posts coming soon.</p>
+					<p>Check back for articles on legal topics, firm news, and helpful resources.</p>
+				</div>
 			</div>
 		</main>
 		<Footer />
@@ -28,27 +31,43 @@ import { SITE_TITLE } from '../../consts';
 </html>
 
 <style>
-	.page-header {
-		padding: 3rem 0 2rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		margin-bottom: 2.5rem;
-		text-align: center;
+	.page-panel {
+		background: #ffffff;
+		padding: 2rem 2.5rem;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+		margin-bottom: 1.5rem;
 	}
-	.page-header h1 {
-		font-size: 2.4rem;
-		color: #1a2744;
+	.page-panel h1 {
+		font-size: 2rem;
+		color: #2d2d2d;
+		margin-bottom: 0.25rem;
 	}
-	.page-header p {
-		color: rgb(var(--gray));
-		margin-top: 0.5rem;
+	.subtitle {
+		color: #666666;
+		margin: 0;
+	}
+	.content-panel {
+		background: #ffffff;
+		padding: 2rem 2.5rem;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 	}
 	.empty-state {
 		text-align: center;
-		padding: 4rem 1rem;
-		color: rgb(var(--gray));
+		padding: 3rem 1rem;
+		color: #666666;
 	}
-	.empty-state p:first-child {
-		font-size: 1.3rem;
+	.empty-icon {
+		font-size: 2.5rem;
 		margin-bottom: 0.5rem;
+	}
+	.empty-title {
+		font-size: 1.2rem;
+		font-weight: 700;
+		color: #333333;
+		margin-bottom: 0.5rem;
+	}
+	.empty-state p:last-child {
+		font-size: 0.95rem;
+		margin: 0;
 	}
 </style>

@@ -13,251 +13,255 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 
-		<!-- Hero -->
-		<section class="hero">
-			<div class="hero-mesh"></div>
-			<div class="hero-content">
-				<h1>Protecting What Matters Most</h1>
-				<p class="hero-tagline">Experienced attorneys committed to defending your rights, safeguarding your family, and securing your future.</p>
-				<a href="/contact" class="cta-button">Schedule a Consultation</a>
-			</div>
-		</section>
-
 		<main>
-			<!-- Practice Areas -->
-			<section class="section">
-				<h2 class="section-title">Our Practice Areas</h2>
-				<p class="section-subtitle">Comprehensive legal services tailored to your needs</p>
-				<div class="practice-grid">
-					<div class="practice-card">
-						<div class="card-icon">⚖️</div>
-						<h3>Family Law</h3>
-						<p>Divorce, custody, adoption, and support matters handled with compassion and expertise.</p>
-					</div>
-					<div class="practice-card">
-						<div class="card-icon">📜</div>
-						<h3>Estate Planning</h3>
-						<p>Wills, trusts, and probate to protect your legacy and provide for your loved ones.</p>
-					</div>
-					<div class="practice-card">
-						<div class="card-icon">🏢</div>
-						<h3>Business Law</h3>
-						<p>Entity formation, contracts, and compliance to help your business thrive.</p>
-					</div>
-					<div class="practice-card">
-						<div class="card-icon">🛡️</div>
-						<h3>Criminal Defense</h3>
-						<p>Aggressive defense of your rights from investigation through trial and appeal.</p>
-					</div>
-					<div class="practice-card">
-						<div class="card-icon">🌐</div>
-						<h3>Immigration</h3>
-						<p>Visas, green cards, citizenship, and deportation defense for individuals and families.</p>
-					</div>
-					<div class="practice-card">
-						<div class="card-icon">🩹</div>
-						<h3>Personal Injury</h3>
-						<p>Fighting for the compensation you deserve after accidents and injuries.</p>
-					</div>
-				</div>
-			</section>
+			<div class="two-col">
+				<!-- Left Column: Services -->
+				<div class="services-col">
+					<h1>Services We Offer</h1>
 
-			<!-- Why Choose Das Law -->
-			<section class="section why-section">
-				<h2 class="section-title">Why Choose Das Law</h2>
-				<div class="values-grid">
-					<div class="value-card">
-						<h3>Decades of Experience</h3>
-						<p>Our attorneys bring extensive courtroom and negotiation experience across a wide range of legal matters.</p>
+					<div class="service-group">
+						<h2>Family Law</h2>
+						<ul>
+							<li>Divorce &amp; Legal Separation</li>
+							<li>Child Custody &amp; Visitation</li>
+							<li>Child Support</li>
+							<li>Spousal Support / Alimony</li>
+							<li>Adoption</li>
+							<li>Prenuptial &amp; Postnuptial Agreements</li>
+							<li>Domestic Violence Protective Orders</li>
+						</ul>
 					</div>
-					<div class="value-card">
-						<h3>Personal Attention</h3>
-						<p>Every client receives individualized counsel. You'll always know your attorney and have direct access to your legal team.</p>
+
+					<div class="service-group">
+						<h2>Estate Planning</h2>
+						<ul>
+							<li>Wills &amp; Living Wills</li>
+							<li>Revocable &amp; Irrevocable Trusts</li>
+							<li>Powers of Attorney</li>
+							<li>Probate &amp; Estate Administration</li>
+							<li>Guardianship &amp; Conservatorship</li>
+							<li>Asset Protection</li>
+						</ul>
 					</div>
-					<div class="value-card">
-						<h3>Results-Driven</h3>
-						<p>We focus on achieving the best possible outcomes — whether through skilled negotiation or tenacious litigation.</p>
+
+					<div class="service-group">
+						<h2>Business Law</h2>
+						<ul>
+							<li>Entity Formation &amp; Structuring</li>
+							<li>Contract Drafting &amp; Negotiation</li>
+							<li>Business Disputes &amp; Litigation</li>
+							<li>Mergers &amp; Acquisitions</li>
+							<li>Employment Law Compliance</li>
+						</ul>
 					</div>
-					<div class="value-card">
-						<h3>Community Commitment</h3>
-						<p>Rooted in the community we serve, we're dedicated to making quality legal representation accessible to all.</p>
+
+					<div class="service-group">
+						<h2>Criminal Defense</h2>
+						<ul>
+							<li>Felony &amp; Misdemeanor Charges</li>
+							<li>DUI / DWI Defense</li>
+							<li>Drug Offenses</li>
+							<li>White-Collar Crimes</li>
+							<li>Federal Charges</li>
+						</ul>
+					</div>
+
+					<div class="service-group">
+						<h2>Immigration</h2>
+						<ul>
+							<li>Family &amp; Employment-Based Visas</li>
+							<li>Green Card Applications</li>
+							<li>Naturalization &amp; Citizenship</li>
+							<li>Deportation Defense</li>
+							<li>Asylum &amp; Refugee Cases</li>
+						</ul>
+					</div>
+
+					<div class="service-group">
+						<h2>Personal Injury</h2>
+						<ul>
+							<li>Auto Accidents</li>
+							<li>Slip &amp; Fall Injuries</li>
+							<li>Medical Malpractice</li>
+							<li>Workplace Injuries</li>
+							<li>Wrongful Death Claims</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Right Column: Contact Card -->
+				<div class="contact-col">
+					<div class="contact-card">
+						<h2>Contact Us</h2>
+						<p class="appt-note">Consultations by Appointment Only</p>
+						<div class="contact-details">
+							<p><strong>Das Law</strong></p>
+							<p>123 Main Street, Suite 400<br />City, State 12345</p>
+							<p><a href="mailto:contact@thedaslaw.com">contact@thedaslaw.com</a></p>
+							<p><a href="tel:+15555555555">(555) 555-5555</a></p>
+						</div>
+						<form class="contact-form" action="#" method="POST">
+							<input type="text" name="name" placeholder="Name" required />
+							<input type="email" name="email" placeholder="Email" required />
+							<input type="text" name="subject" placeholder="Subject" />
+							<input type="tel" name="phone" placeholder="Phone" />
+							<textarea name="message" placeholder="Message" rows="5" required></textarea>
+							<button type="submit">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- Schedule CTA -->
+			<section class="cta-section">
+				<h2>Schedule a Consultation</h2>
+				<p>Whether you need help with a family matter, estate planning, business issue, or any other legal concern, our experienced attorneys are ready to assist you.</p>
+				<a href="/contact" class="cta-link">Contact Us Today &rarr;</a>
 			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
 
 <style>
-	/* ── Hero ── */
-	.hero {
-		position: relative;
-		background: linear-gradient(135deg, #0f1724 0%, #1a2744 50%, #243b6e 100%);
-		padding: 6rem 1.5rem 5rem;
-		text-align: center;
-		overflow: hidden;
+	/* Two-column layout */
+	.two-col {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 2.5rem;
+		align-items: start;
 	}
-	.hero-mesh {
-		position: absolute;
-		inset: 0;
-		opacity: 0.05;
-		background-image:
-			linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
-		background-size: 60px 60px;
+
+	/* Services column */
+	.services-col h1 {
+		font-size: 1.8rem;
+		color: var(--text-dark);
+		margin-bottom: 1.5rem;
+		border-bottom: 2px solid var(--accent);
+		padding-bottom: 0.5rem;
 	}
-	.hero-content {
-		position: relative;
-		z-index: 1;
-		max-width: 720px;
-		margin: 0 auto;
+	.service-group {
+		margin-bottom: 1.5rem;
 	}
-	.hero h1 {
-		font-size: 3rem;
+	.service-group h2 {
+		font-size: 1.2rem;
+		color: var(--accent);
+		margin-bottom: 0.4rem;
+	}
+	.service-group ul {
+		margin: 0 0 0.5rem 0;
+		padding-left: 1.25rem;
+		list-style: disc;
+	}
+	.service-group li {
+		font-size: 0.92rem;
+		line-height: 1.7;
+		color: var(--text-dark);
+	}
+
+	/* Contact card */
+	.contact-card {
+		background: #3d3d3d;
 		color: #ffffff;
+		padding: 1.75rem;
+	}
+	.contact-card h2 {
+		color: #ffffff;
+		font-size: 1.4rem;
+		margin-bottom: 0.5rem;
+	}
+	.appt-note {
+		font-style: italic;
+		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 0.7);
 		margin-bottom: 1rem;
 	}
-	.hero-tagline {
-		color: rgba(255, 255, 255, 0.8);
-		font-size: 1.2rem;
-		margin-bottom: 2rem;
+	.contact-details {
+		margin-bottom: 1.25rem;
+		font-size: 0.9rem;
 		line-height: 1.6;
 	}
-	.cta-button {
+	.contact-details p {
+		margin-bottom: 0.3rem;
+	}
+	.contact-details a {
+		color: #a8c4d0;
+		text-decoration: none;
+	}
+	.contact-details a:hover {
+		color: #ffffff;
+	}
+	.contact-form input,
+	.contact-form textarea {
+		display: block;
+		width: 100%;
+		padding: 0.55rem 0.7rem;
+		margin-bottom: 0.6rem;
+		border: 1px solid #555;
+		background: #4a4a4a;
+		color: #ffffff;
+		font-family: inherit;
+		font-size: 0.9rem;
+	}
+	.contact-form input::placeholder,
+	.contact-form textarea::placeholder {
+		color: rgba(255, 255, 255, 0.5);
+	}
+	.contact-form textarea {
+		resize: vertical;
+	}
+	.contact-form button {
+		display: block;
+		width: 100%;
+		padding: 0.6rem;
+		background: var(--accent);
+		color: #ffffff;
+		border: none;
+		font-size: 0.95rem;
+		font-weight: 700;
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+	.contact-form button:hover {
+		background: var(--accent-dark);
+	}
+
+	/* CTA section */
+	.cta-section {
+		text-align: center;
+		padding: 2.5rem 1rem;
+		margin-top: 2rem;
+		border-top: 1px solid var(--border-light);
+	}
+	.cta-section h2 {
+		font-size: 1.6rem;
+		color: var(--text-dark);
+		margin-bottom: 0.75rem;
+	}
+	.cta-section p {
+		max-width: 600px;
+		margin: 0 auto 1.25rem;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+	.cta-link {
 		display: inline-block;
-		padding: 0.9rem 2.5rem;
-		background: #c9a84c;
-		color: #1a2744;
+		padding: 0.7rem 2rem;
+		background: var(--accent);
+		color: #ffffff;
 		text-decoration: none;
 		font-weight: 700;
-		font-size: 1.1rem;
-		border-radius: 4px;
-		transition: background 0.2s, transform 0.2s;
+		transition: background 0.2s;
 	}
-	.cta-button:hover {
-		background: #a07d2e;
+	.cta-link:hover {
+		background: var(--accent-dark);
 		color: #ffffff;
-		transform: translateY(-2px);
-	}
-	.hero::after {
-		content: '';
-		position: absolute;
-		bottom: -1px;
-		left: 0;
-		right: 0;
-		height: 60px;
-		background: white;
-		border-radius: 50% 50% 0 0 / 100% 100% 0 0;
 	}
 
-	/* ── Sections ── */
-	.section {
-		margin-bottom: 4rem;
-	}
-	.section-title {
-		font-size: 2rem;
-		color: #1a2744;
-		text-align: center;
-		margin-bottom: 0.5rem;
-	}
-	.section-subtitle {
-		text-align: center;
-		color: rgb(var(--gray));
-		margin-bottom: 2.5rem;
-		font-size: 1.1rem;
-	}
-
-	/* ── Practice Area Cards ── */
-	.practice-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
-	}
-	.practice-card {
-		background: #ffffff;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 8px;
-		padding: 2rem 1.5rem;
-		text-align: center;
-		transition: box-shadow 0.2s, transform 0.2s;
-	}
-	.practice-card:hover {
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-		transform: translateY(-4px);
-	}
-	.card-icon {
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-	}
-	.practice-card h3 {
-		font-size: 1.3rem;
-		color: #1a2744;
-		margin-bottom: 0.5rem;
-	}
-	.practice-card p {
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
-		line-height: 1.5;
-		margin: 0;
-	}
-
-	/* ── Why Choose ── */
-	.why-section {
-		background: #f8f9fa;
-		margin-left: -1em;
-		margin-right: -1em;
-		padding: 3rem 1em;
-		border-radius: 8px;
-	}
-	.values-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5rem;
-	}
-	.value-card {
-		padding: 1.5rem;
-	}
-	.value-card h3 {
-		font-size: 1.2rem;
-		color: #1a2744;
-		margin-bottom: 0.5rem;
-	}
-	.value-card h3::before {
-		content: '✓ ';
-		color: #c9a84c;
-		font-weight: 700;
-	}
-	.value-card p {
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
-		margin: 0;
-		line-height: 1.6;
-	}
-
-	/* ── Responsive ── */
+	/* Responsive */
 	@media (max-width: 720px) {
-		.hero {
-			padding: 4rem 1rem 3rem;
-		}
-		.hero h1 {
-			font-size: 2.2rem;
-		}
-		.practice-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-		.values-grid {
-			grid-template-columns: 1fr;
-		}
-	}
-	@media (max-width: 480px) {
-		.hero h1 {
-			font-size: 1.8rem;
-		}
-		.hero-tagline {
-			font-size: 1rem;
-		}
-		.practice-grid {
+		.two-col {
 			grid-template-columns: 1fr;
 		}
 	}

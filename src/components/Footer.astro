@@ -4,29 +4,73 @@ const today = new Date();
 
 <footer>
 	<div class="footer-content">
-		<p class="copyright">&copy; {today.getFullYear()} Das Law. All rights reserved.</p>
-		<p class="disclaimer">This website is for informational purposes only and does not constitute legal advice.</p>
+		<div class="footer-firm">
+			<h3>Das Law</h3>
+			<p>Experienced legal counsel dedicated to protecting your rights and achieving the best outcomes for you and your family.</p>
+		</div>
+		<div class="footer-disclaimer">
+			<p>The information on this website is for general informational purposes only. Nothing on this site should be construed as legal advice or as creating an attorney-client relationship. Every case is different, and past results do not guarantee future outcomes. Please consult with an attorney for advice regarding your individual situation.</p>
+		</div>
+		<div class="footer-bottom">
+			<p class="copyright">&copy; {today.getFullYear()} Das Law. All rights reserved.</p>
+			<p class="contact-line">123 Main Street, Suite 400, City, State 12345 &nbsp;|&nbsp; <a href="tel:+15555555555">(555) 555-5555</a> &nbsp;|&nbsp; <a href="mailto:contact@thedaslaw.com">contact@thedaslaw.com</a></p>
+		</div>
 	</div>
 </footer>
 <style>
 	footer {
-		padding: 2.5em 1em;
-		background: #1a2744;
-		color: rgba(255, 255, 255, 0.8);
-		text-align: center;
+		padding: 2.5em 1em 1.5em;
+		background: #333333;
+		color: rgba(255, 255, 255, 0.85);
 	}
 	.footer-content {
 		max-width: 960px;
 		margin: 0 auto;
 	}
+	.footer-firm h3 {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		color: #ffffff;
+		font-size: 1.3rem;
+		margin-bottom: 0.5rem;
+	}
+	.footer-firm p {
+		font-size: 0.9rem;
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 1.5rem;
+	}
+	.footer-disclaimer {
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+		padding-top: 1.25rem;
+		margin-bottom: 1.25rem;
+	}
+	.footer-disclaimer p {
+		font-size: 0.8rem;
+		line-height: 1.6;
+		color: rgba(255, 255, 255, 0.5);
+		margin: 0;
+	}
+	.footer-bottom {
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+		padding-top: 1rem;
+		text-align: center;
+	}
 	.copyright {
-		margin-bottom: 0.5em;
+		margin-bottom: 0.3em;
 		font-weight: 700;
 		color: #ffffff;
-	}
-	.disclaimer {
 		font-size: 0.85rem;
+	}
+	.contact-line {
+		font-size: 0.8rem;
 		color: rgba(255, 255, 255, 0.6);
 		margin: 0;
+	}
+	.contact-line a {
+		color: rgba(255, 255, 255, 0.7);
+		text-decoration: none;
+	}
+	.contact-line a:hover {
+		color: #ffffff;
 	}
 </style>
